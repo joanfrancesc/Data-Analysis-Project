@@ -1,0 +1,86 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{examJF}
+\RequirePackage[english]{babel}
+\RequirePackage[math]{blindtext}
+\RequirePackage[utf8]{inputenc}
+%\RequirePackage[T1]{fontenc}
+\RequirePackage{fourier} % Use TeX Gyre Pagella font (based on Palatino)
+\RequirePackage[scaled=0.7]{beramono}
+\RequirePackage[svgnames]{xcolor}
+\RequirePackage{soul}
+\RequirePackage{graphicx,lastpage}
+\RequirePackage{epstopdf}
+\RequirePackage{upgreek}
+\RequirePackage[a4paper,bindingoffset=0cm,left=1.8cm,right=1.4cm,top=1.8cm,bottom=1.8cm,headsep=.5\baselineskip]{geometry}
+\RequirePackage[en-GB]{datetime2}
+\RequirePackage{enumitem}
+\RequirePackage{multicol}
+    \setlength{\columnsep}{1cm}
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{mathtools}
+\RequirePackage[nice]{nicefrac}
+\RequirePackage[makeroom]{cancel}
+\RequirePackage[parse-numbers=false]{siunitx}
+\RequirePackage[cache=false]{minted}
+\RequirePackage[font=small,labelfont=bf,centerlast]{caption}
+\RequirePackage{tocloft}
+\RequirePackage[pdfborderstyle={/S/U/W 1}]{hyperref}
+\RequirePackage[inkscapeformat=png]{svg}
+\RequirePackage{titlesec} % Required for customizing section titles
+\RequirePackage{pgfplots}
+    % and optionally (as of Pgfplots 1.3):
+    \pgfplotsset{compat=newest}
+    \pgfplotsset{plot coordinates/math parser=false}
+    \newlength\figureheight
+    \newlength\figurewidth
+\RequirePackage{pgfgantt}
+\RequirePackage{array}
+\RequirePackage{longtable}
+
+%\renewcommand{\solutiontitle}{\noindent\underline{\textsc{Solución:}}\par\noindent}
+\renewcommand{\partlabel}{\thepartno)}
+\renewcommand{\subpartlabel}{\thesubpart)}
+\renewcommand{\thesubpart}{\arabic{subpart}}
+
+\RequirePackage{appendix}
+\RequirePackage{etoolbox} % For \AtBeginEnvironment
+\RequirePackage[nameinlink,noabbrev]{cleveref}
+%\crefname{figure}{figura}{figuras}
+%\crefname{question}{pregunta}{preguntas}
+
+\renewcommand{\appendixname}{Annexe} % Change the heading word
+\AtBeginEnvironment{appendices}{%
+    \crefalias{section}{annexe}% Tell cleveref to alias 'section' to 'annexe' here
+}
+\crefname{annexe}{annexe}{annexes}% Define the 'annexe' type for cleveref
+\Crefname{annexe}{Annexe}{Annexes}
+\crefname{section}{section}{sections} % Default for regular sections (must be after \crefalias)
+\Crefname{section}{Section}{Sections}
+
+
+\newcommand*{\underuparrow}[1]{\ensuremath{\underset{\uparrow}{#1}}}
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}%
+
+\raggedbottom %\flushbottom
+\RequirePackage{contour}
+\RequirePackage[normalem]{ulem}
+%\renewcommand\ULthickness{0.4pt}   %%---> For changing thickness of underline
+%\setlength\ULdepth{1.5ex}%\maxdimen ---> For changing depth of underline
+\renewcommand{\ULdepth}{1.8pt}
+\contourlength{0.8pt}
+\newcommand{\myul}[1]{%
+  \uline{\phantom{#1}}%
+  \llap{\contour{white}{#1}}%
+}
+
+\renewcommand{\baselinestretch}{1}
+\setlength{\parindent}{0em}
+\setlength{\parskip}{0.5em}
+
+\pagestyle{empty}
+\pagestyle{foot}
+\footrule
+
+\definecolor{upc}{rgb}{0.15,0.55,0.7}
