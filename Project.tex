@@ -172,36 +172,27 @@
 
             \Cref{annex:database} describes the contents and format of the shared files.
 
-            \item \textbf{Data Cleansing:} Identify and handle potential issues like noise, artefacts (e.g., blinks, muscle activity), and bad channels. Decide on appropriate strategies for correction or removal.
+            \item \textbf{Data Cleansing:} Identify and handle potential issues like noise, artefacts (e.g., blinks, ocular movements, muscular activity from the head and neck), and bad channels. Decide on appropriate strategies for correction and/or removal.
             \item \textbf{Preprocessing:} Apply necessary preprocessing steps such as filtering (e.g., bandpass filtering to isolate relevant frequency bands), referencing, and epoching (segmenting the data into trials based on task markers).
             \item \textbf{Data Visualisation:} Create informative visualisations (e.g., time series plots, power spectral density plots, topographic plots) to understand the characteristics of the EEG signals during different tasks and to guide preprocessing choices.
         \end{itemize}
         \item \textbf{Comments:} It may be easier to do this in MATLAB, reusing code developed in \emph{HMI}.
     \end{itemize}
 
-    \begin{center} % Keep figure environments centered if desired
-        \begin{minipage}[t]{0.8\textwidth} % Use minipage to group figure and caption
-            \centering
-            \begin{figure}[H] % Consider [htbp] if layout issues persist
-                \centering
-                \Acrobatmenu{GoBack}{\includegraphics[width=14cm]{./figures/ERDbeta_av_2022.eps}} % Ensure figure path is correct
-                \caption{Grand-average ERD/ERS potentials obtained in the \(\beta\) band for the movements in \href{https://doi.org/10.1371/journal.pone.0182578}{P. Ofner et al., 2017}. Image by S. Romero.}
-                \label{fig:ERD}
-            \end{figure}
-        \end{minipage}
+    \begin{figure}[htbp]
+        \centering
+        \Acrobatmenu{GoBack}{\includegraphics[width=14cm]{./figures/ERDbeta_av_2022.eps}} % Ensure figure path is correct
+        \caption{Grand-average ERD/ERS potentials obtained in the \(\beta\) band for\\the movements in \href{https://doi.org/10.1371/journal.pone.0182578}{\myul{P. Ofner et al., 2017}}.Image by S. Romero.}
+        \label{fig:ERD}
+    \end{figure}
 
-        \smallskip % Add some vertical space between figures
-
-        \begin{minipage}[t]{\textwidth} % Use minipage to group figure and caption
-            \centering
-            \begin{figure}[H] % Consider [htbp] if layout issues persist
-                \centering
-                \Acrobatmenu{GoBack}{\includegraphics[width=16cm]{./figures/ERDbeta_topography_2022.eps}} % Ensure figure path is correct
-                \caption{Grand-average ERD potentials (in \si{\micro\volt}) obtained in the \(\beta\) band at the movement onset, for the movements in \href{https://doi.org/10.1371/journal.pone.0182578}{P. Ofner et al., 2017}. Image by S. Romero.}
-                \label{fig:ERDtopo}
-            \end{figure}
-        \end{minipage}
-    \end{center}
+    \smallskip % Add some vertical space between figures
+    \begin{figure}[htbp]
+        \centering
+        \Acrobatmenu{GoBack}{\includegraphics[width=17.5cm]{./figures/ERDbeta_topography_2022.eps}} % Ensure figure path is correct
+        \caption{Grand-average ERD potentials (in \si{\micro\volt}) obtained in the \(\beta\) band at the movement onset,\\for the movements in \href{https://doi.org/10.1371/journal.pone.0182578}{\myul{P. Ofner et al., 2017}}. Image by S. Romero.}
+        \label{fig:ERDtopo}
+    \end{figure}
 
     \subsection{Phase 2: Feature Engineering and Selection/Extraction} % Changed & to and
     \begin{itemize}
@@ -215,6 +206,13 @@
                 \item \textbf{Common Spatial Patterns (CSP):} Implement and utilise CSP, a powerful technique for BCI that finds spatial filters maximising variance between classes. Experiment with the number of patterns/filters. Additional insights on CSP \href{https://doi.org/10.1109/MSP.2008.4408441}{\myul{in this article by B. Blankertz et al. 2007}}.
                 \item \textbf{Other potential features} (e.g., statistical measures, connectivity metrics).
             \end{itemize}
+
+            \begin{figure}[htbp]
+                \centering
+                \Acrobatmenu{GoBack}{\includegraphics[width=8cm]{./figures/tfr_diff.png}}
+                 \caption{Topographic representation of the difference\\in beta power between left and right response. Taken from \href{https://www.fieldtriptoolbox.org/workshop/oslo2019/timefrequency/}{\myul{a FieldTrip tutorial}}}.
+            \end{figure}
+
             \item \textbf{Feature Analysis and Selection/Extraction:} % Changed & to and
             \begin{itemize}
                 \item Analyse the discriminative power of individual features or feature sets.
@@ -238,17 +236,13 @@
         \end{itemize}
     \end{itemize}
 
-    \begin{center} % Keep figure centered
-        \begin{minipage}[t]{\textwidth} % Use minipage to group figure and caption
-            \centering
-            \begin{figure}[H] % Consider [htbp] if layout issues persist
-                \centering
-                \Acrobatmenu{GoBack}{\includegraphics[width=16cm]{./figures/SCP_topography_2022.eps}} % Ensure figure path is correct
-                \caption{Slow cortical potential topographies for the movements in \href{https://doi.org/10.1371/journal.pone.0182578}{P. Ofner et al., 2017}. Maps show the grand-average amplitude in \si{\micro\volt} of a \SI{0.5}{\second} segment selected just before the movement onset. Image by S. Romero.}
-                \label{fig:SCPtopo}
-            \end{figure}
-        \end{minipage}
-    \end{center}
+    \begin{figure}[htbp]
+        \centering
+        \Acrobatmenu{GoBack}{\includegraphics[width=17.5cm]{./figures/SCP_topography_2022.eps}} % Ensure figure path is correct
+        \caption{Slow cortical potential topographies for the movements in \href{https://doi.org/10.1371/journal.pone.0182578}{\myul{P. Ofner et al., 2017}}.\\ Maps show the grand-average amplitude in \si{\micro\volt} of a \SI{0.5}{\second} segment selected just before\\the movement onset. Image by S. Romero.}
+        \label{fig:SCPtopo}
+    \end{figure}
+
 
     % MATLAB Code Example
     \label{code:MATLAB1} % Label for cross-referencing page number
@@ -290,6 +284,11 @@
             \item \textbf{Performance Metrics:} Select and calculate appropriate performance metrics (e.g., accuracy, precision, recall, F1-score, confusion matrix) to compare the models effectively.
         \end{itemize}
         \item \textbf{Comments:} In this part you will be using Python (importing \texttt{.csv} files generated by MATLAB), as we have done throughout the course.
+        \begin{figure}[htbp]
+            \centering
+            \Acrobatmenu{GoBack}{\includegraphics[width=12cm]{./figures/5-fold-CV.png}}
+            \caption{5-fold cross-validation scheme. Taken from \href{https://www.datacamp.com/tutorial/k-fold-cross-validation}{\myul{a datacamp.com tutorial}}}.
+        \end{figure}
 
         Model selection will also depend on your feature selection/extraction strategy. For example, if you use a \emph{wrapping} approach and change the model, you may need to run feature selection for each model. If you choose a \emph{filtering} approach, feature selection is model-independent, but less optimised for the chosen model.
 
@@ -298,20 +297,26 @@
             \item All but one subject to train, \textbf{leaving one out} to test each time (selecting the best model as the one with best average performance),
             \item Implement a \textbf{hold-out} strategy by training with some subjects and testing with the rest,
             \item Training a model on each subject, leaving out some data to test each time (\textbf{stratified hold-out}), and then choosing the model also based on average performance.
-            \item \textbf{Or something completely different} that you may come up with (perhaps devising an original approach). % Made slightly more formal
+            \item \textbf{Or something completely different} that you may come up with (perhaps devising an original approach, surprise your instructors!).
             The primary consideration here is to choose a strategy, interpret and understand the results obtained, and propose changes or improvements depending on them.
         \end{itemize}
         Also, take into account that we are dealing with a \textbf{3-class classification problem}, but it can be divided into \textbf{two 2-class classification problems}: rest vs motor imagery and then left vs right. In this case, discuss the suitability of each metric for this potentially imbalanced problem.
     \end{itemize}
 
-    \subsection{Phase 4: Final Model Assessment and Reporting} % Changed & to and
+    \begin{figure}[htbp]
+        \centering
+        \Acrobatmenu{GoBack}{\includesvg[width=14cm]{./figures/workflow_with_validation_set.svg}}
+        \caption{A good workflow for development and testing. Taken from \href{https://developers.google.com/machine-learning/crash-course/overfitting/dividing-datasets}{\myul{a machine learning course by Google}}.}
+    \end{figure}
+
+    \subsection{Phase 4: Final Model Assessment and Reporting}
     \begin{itemize}
         \item \textbf{Objective:} Evaluate your best-performing model(s) on unseen data and prepare your final report and presentation.
         \item \textbf{Tasks:}
         \begin{itemize}
             \item \textbf{Offline Testing:} Apply your final, trained model pipeline(s) to a separate, unseen test dataset (the left-out subject or your own recordings using the same protocol and OpenBCI headset). Report the performance on this dataset.
-            \item \textbf{Analysis and Discussion:} Analyse your results, discuss the strengths and weaknesses of your approach, compare the performance of different features and models, and reflect on challenges encountered. % British spelling Analyse is correct
-            \item \textbf{Final Report and Presentation:} Prepare a comprehensive report detailing your entire workflow, methodology, results, and conclusions. Deliver a group presentation summarising your project. % British spelling summarising is correct
+            \item \textbf{Analysis and Discussion:} Analyse your results, discuss the strengths and weaknesses of your approach, compare the performance of different features and models, and reflect on challenges encountered. Include in the discussion a evaluation of your pipeline in terms of procesing load and response time (both training and applying the model), commenting on its suitability for real-time use. Does anything need to change? How would you make it work on real-time EEG signals?
+            \item \textbf{Final Report and Presentation:} Prepare a comprehensive report detailing your entire workflow, methodology, results, and conclusions. Deliver a group presentation summarising your project.
         \end{itemize}
         \item \textbf{Comments:} More details on the deliverables in \Cref{sec:deliverables}.
     \end{itemize}
@@ -400,9 +405,9 @@
         \item The document should be \textbf{one PDF document}. Additional files or information that cannot be included as annexes (such as \texttt{.csv} files or \texttt{.ipynb} notebooks), will be added in an \textbf{additional \texttt{.zip} file}. The \textbf{maximum allowed size} for each file is $\SI{\mathbf{200}}{\mathbf{\mega\byte}}$. % British spelling allowed is correct
         \item \textbf{Do not include code as screenshots or images, code must be text that can be copied and pasted}. The use of \LaTeX\ is highly recommended. You may use this document as a reference if you are unsure where to start; the \LaTeX~source is available \href{https://github.com/joanfrancesc/Data-Analysis-Project}{\myul{here}}.
 
-        \begin{figure}[H] % Consider [htbp] if layout issues persist
+        \begin{figure}[htbp]
             \centering
-            \Acrobatmenu{GoBack}{\includegraphics[width=8cm]{./figures/AnakinPadme.jpg}} % Ensure figure path is correct
+            \Acrobatmenu{GoBack}{\includegraphics[width=8cm]{./figures/AnakinPadme.jpg}}
             \caption{``To the Dark Side, a Jedi turns, hmmm, \\each time a code screenshot to a document you paste, yes.'' --- Master Yoda}
             \label{fig:NoScreenshots}
         \end{figure}
@@ -411,12 +416,12 @@
     \subsection{Presentation}
     \label{subsec:presentation}
     \subsubsection{Contents}
-    Your presentation, similarly to the report, should be a clear, concise, and well-structured document summarising your project. It can have a similar structure to the report, but it is not compulsory to follow it. % British spelling summarising is correct
+    Your presentation, similarly to the report, should be a clear, concise, and well-structured document summarising your project. It can have a similar structure to the report, but it is not compulsory to follow it.
 
     \subsubsection{Delivery}
     \begin{itemize}
         \item The presentation document is expected to be delivered \href{https://atenea.upc.edu/mod/assign/view.php?id=4973442}{\myul{via ATENEA}} \textbf{before the end of 11th June}.
-        \item The document should be \textbf{one PDF document}. No additional files will be accepted. The \textbf{maximum allowed size} for the file is $\SI{\mathbf{200}}{\mathbf{\mega\byte}}$. % Corrected 'addditional', British spelling allowed is correct
+        \item The document should be \textbf{one PDF document}. No additional files will be accepted. The \textbf{maximum allowed size} for the file is $\SI{\mathbf{200}}{\mathbf{\mega\byte}}$.
         \item Each group of students will have a slot of \SIrange{10}{15}{\min} to present their projects \textbf{on 12th June, just after the final exam}.
         \item You may use a \textbf{PDF or Powerpoint} file and the computer in the room for presenting (recommended), or your own laptop if you need different software. % Corrected phrasing
     \end{itemize}
@@ -429,11 +434,33 @@
     \end{itemize}
     Check all the criteria used to assess the project in \Cref{ann:projectrubric}, and to assess the presentation in \Cref{ann:presentationrubric}.
 
+    \newpage
+    \section{Collaboration and Expectations}
+    \begin{wrapfigure}{r}{0.5\textwidth}
+        \vspace{-12pt}
+        \centering
+        \Acrobatmenu{GoBack}{\includegraphics[width=8.5cm]{./figures/DAR.png}}
+        \caption{Generated using \href{https://gemini.google.com/}{\myul{Gemini 2.5 Pro}} and the prompt:\\[4pt]
+            \emph{Generate a group 4 of students working together on a project, brainstorming and collaborating.\\[4pt]
+                They should have laptops. Add the text 'Data Analysis' on one screen. Make the image in cartoon style like Studio Ghibli}.}
+        \vspace{-75pt}
+        \label{fig:collaboration}
+    \end{wrapfigure}
+    This project relies heavily on effective teamwork and collaborative effort from everyone involved.
 
-    \section{Collaboration and Expectations} % Changed & to and
-
-    This is a group project, and effective collaboration is key. Ensure clear communication, equitable distribution of tasks, and regular meetings. All group members are expected to contribute significantly to all phases of the project. We encourage you to explore, experiment, and be creative in your approach while grounding your decisions in sound data analysis principles.
-
+    To foster a positive and productive working environment, please ensure your group prioritises the following behaviours:
+    \begin{itemize}
+        \item \textbf{Clear and open communication:} Actively listen to each other and express ideas respectfully, ensuring everyone's voice can be heard.
+        \item \textbf{Equitable task distribution:} Share responsibilities fairly amongst all team members, considering individual strengths and development goals where appropriate. Agree on roles and tasks collectively.
+        \item \textbf{Regular team meetings:} Schedule and attend regular check-ins to discuss progress, address any challenges, and maintain alignment within the group organisation.
+    \end{itemize}
+    \vspace*{5mm}
+    \textbf{Please bear in mind that}:
+    \begin{itemize}
+        \item All individuals in the group are expected to make significant contributions throughout every phase of the project. Active participation from everyone is essential for success.
+        \item We strongly encourage you to explore different avenues, experiment with techniques, and apply creative thinking to your approach, whilst always basing your technical decisions on sound data analysis principles.
+        \item The use of AI tools is permitted as an aid; however, transparency is required. Should you use such tools, please include comprehensive details regarding where, when, and how they assisted in the project's development (similar to the example provided in \Cref{fig:collaboration}).
+    \end{itemize}
 
     \newpage
     \section{Acknowledgements}
@@ -452,9 +479,6 @@
     \end{flushright}
 
     \newpage
-    % Prevent page break just before appendices if possible
-    \nopagebreak
-
     % --- Start Annexes ---
     \begin{appendices}
         % --- Appendix-specific formatting ---
@@ -476,11 +500,18 @@
         \subsection{Channel Information}
 
         \begin{itemize}
-            \item The channel labels in the \texttt{.mat} data files contain the raw output from the OpenBCI system.
+            \item The channel labels in the \texttt{.mat} data files contain the raw output from the OpenBCI system (see \Cref{fig:OpenBCI}).
             \item Data transmission was managed via a command-line interface, which also facilitated the configuration of data transmission parameters, including amplifier gain. However, direct in-software renaming of channels is not currently supported by the OpenBCI software, nor the suppression of unused channels.
-            \item The validated channel labels for analysis are, from 1 to 15: F7, F3, Fz, F4, F8, T3, C3, Cz, C4 , T4, P7, P3, Pz, P4, and P8. % British spelling analysis is correct
-            \item A 16th channel is present due to amplifier configuration and must be excluded from subsequent analysis. % Corrected grammar
+            \item The validated channel labels for analysis are, from 1 to 15: F7, F3, Fz, F4, F8, T3, C3, Cz, C4 , T4, P7, P3, Pz, P4, and P8. All of them correspond to the standars 10/20 international system.
+            \item A 16th channel is present due to amplifier configuration and must be excluded from subsequent analysis.
         \end{itemize}
+
+        \begin{figure}[htbp]
+            \centering
+            \Acrobatmenu{GoBack}{\includegraphics[trim=0cm 1cm 0cm 1cm, clip, width=9cm]{./figures/UCM4-003.png}}
+            \caption{Ultracortex EEG headset and Cyton/Daisy bioamplifier. Image from the \href{https://shop.openbci.com/products/the-complete-headset-eeg?variant=44401726193904}{\myul{OpenBCI Shop}}.}
+            \label{fig:OpenBCI}
+        \end{figure}
 
         \subsection{Experimental Protocol}
 
@@ -491,7 +522,7 @@
         Thus, for motor imagery (MI) classification, data start at the 121st trial. This subset comprises 360 MI trials (6 runs $\times$ 60 trials), with 120 trials per condition (right-hand, left-hand, rest).
 
         \subsection{Trial Structure}
-        \begin{figure}[htbp] % Use standard float specifiers like [htbp] unless [H] is essential and checked
+        \begin{figure}[htbp]
             \centering
             \Acrobatmenu{GoBack}{\includegraphics[width=8cm]{./figures/paradigm.png}} % Ensure figure path is correct
             \caption{Paradigm used in the motor imagery trials. Image by J. Pinyol.}

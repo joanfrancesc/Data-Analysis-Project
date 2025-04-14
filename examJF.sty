@@ -4,10 +4,11 @@
 \RequirePackage[math]{blindtext}
 \RequirePackage[utf8]{inputenc}
 %\RequirePackage[T1]{fontenc}
-\RequirePackage{fourier} % Use TeX Gyre Pagella font (based on Palatino)
+\RequirePackage{fourier}  % This is a font, haha
 \RequirePackage[scaled=0.7]{beramono}
 \RequirePackage[svgnames]{xcolor}
 \RequirePackage{soul}
+\RequirePackage{wrapfig}
 \RequirePackage{graphicx,lastpage}
 \RequirePackage{epstopdf}
 \RequirePackage{upgreek}
@@ -70,7 +71,7 @@
 %\setlength\ULdepth{1.5ex}%\maxdimen ---> For changing depth of underline
 \renewcommand{\ULdepth}{1.8pt}
 \contourlength{0.8pt}
-\newcommand{\myul}[1]{%
+\DeclareRobustCommand{\myul}[1]{%
   \uline{\phantom{#1}}%
   \llap{\contour{white}{#1}}%
 }
