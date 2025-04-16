@@ -105,29 +105,34 @@
     \newpage
     \section{Project Phases and Tasks}
     \subsection{Proposed Planning}
-
-    \begin{ganttchart}[
+    \ganttset{
+        % Set default milestone symbol to a circle and left-align label
+        milestone/.append style={shape=star, draw=black, minimum size=4pt, inner sep=0pt},
         % --- Font Size Options ---
-        title label font=\small,  % Adjust size for calendar titles
+        title label font=\small\bfseries,  % Adjust size for calendar titles
         bar label font=\footnotesize, % Adjust size for task labels
-        group label font=\small, % Adjust size for group labels
-        milestone label font=\footnotesize, % Adjust size for milestones
-        % --- Indentation Option ---
-        bar label node/.append style={xshift=1em}, % Indent bar labels
-        % --- Other Options ---
-        x unit=2.35mm,
-        y unit chart=4.5mm,
+        group label font=\small\bfseries, % Adjust size for group labels
+        milestone label font=\scriptsize, % Adjust size for milestones
+        % --- Layout Options ---
+        bar label node/.append style={text width=6.5cm, align=left, xshift=1em}, % Indent & align bar labels
+        group label node/.append style={text width=6.5cm, align=left} % Align group labels
+    }
+
+    \noindent % Prevent potential indentation of the chart
+    \begin{ganttchart}[
+        % --- Chart Specific Options ---
+        x unit=2.25mm,
+        y unit chart=4.25mm,
         time slot unit=day,
         time slot format=isodate,
         vgrid,
-        hgrid,
-        bar label node/.append style={text width=6cm, align=left},
-        group label node/.append style={text width=6cm, align=left}
-        ]{2025-04-28}{2025-06-15} % Ensure these dates are correct
+        hgrid
+        ]{2025-04-28}{2025-06-15} % Chart date range
 
 
         % Title Setup - shows months & weeks
         \gantttitlecalendar{month=shortname, week} \\
+
 
         % --- Phase 1: Data Understanding (Apr 28 - May 3) ---
         \ganttgroup[group/.append style={fill=RoyalBlue!90}]{Phase 1: Exploratory Data Analysis}{2025-04-28}{2025-05-03} \\
@@ -157,9 +162,10 @@
         \ganttbar[bar/.append style={fill=FireBrick!60}]{Task 4.1: Offline Testing}{2025-06-02}{2025-06-03} \\
         \ganttbar[bar/.append style={fill=FireBrick!50}]{Task 4.2: Analysis and Discussion}{2025-06-04}{2025-06-06} \\ % Changed & to and
         \ganttbar[bar/.append style={fill=FireBrick!40}]{Task 4.3: Report Preparation}{2025-05-01}{2025-06-10} \\
-        \ganttmilestone[milestone/.append style={fill=FireBrick}]{Deliver Report (ATENEA, 11th June)}{2025-06-11} \\
+        \ganttmilestone[milestone/.append style={fill=Gold!90}]{Deliver Report PDF (ATENEA, 11th June)}{2025-06-11} \\
         \ganttbar[bar/.append style={fill=FireBrick!30}]{Task 4.4: Presentation Preparation}{2025-06-04}{2025-06-11} \\
-        \ganttmilestone[milestone/.append style={fill=FireBrick}]{Presentation (Room 4.2, 12th June)}{2025-06-12}
+        \ganttmilestone[milestone/.append style={fill=Gold!90}]{Deliver Presentation PDF (ATENEA, 11th June)}{2025-06-11} \\
+        \ganttmilestone[milestone/.append style={fill=FireBrick!90}]{Group Presentation (Room 4.2, 12th June)}{2025-06-12}
 
     \end{ganttchart}
 
@@ -259,19 +265,16 @@
 
     % CSV Export Example
     \label{code:MATLAB2} % Label for cross-referencing page number
-    % Removed the outer \begin{center}...\end{center}
-    \begin{minipage}[t]{0.4\textwidth} % Keep minipage for layout if needed
-        \inputminted[frame=lines,
-        framesep=4mm,
-        baselinestretch=0.85,
-        linenos,
-        numbersep=2mm,
-        xleftmargin=8mm,
-        label={Exported 'features.csv' file},
-        style=xcode]
-        {text}{./codes/features.csv} % Ensure code path is correct
-    \end{minipage}
-    % Removed \bigskip here to potentially fix blank page issue
+    \inputminted[frame=lines,
+    framesep=4mm,
+    baselinestretch=0.85,
+    linenos,
+    numbersep=2mm,
+    xleftmargin=55mm,
+    xrightmargin=55mm,
+    label={Exported 'features.csv' file},
+    style=xcode]
+    {text}{./codes/features.csv} % Ensure code path is correct
 
     \subsection{Phase 3: Model Training and Validation} % Changed & to and
     \begin{itemize}
@@ -459,7 +462,7 @@
     \begin{itemize}
         \item All individuals in the group are expected to make significant contributions throughout every phase of the project. Active participation from everyone is essential for success.
         \item We strongly encourage you to explore different avenues, experiment with techniques, and apply creative thinking to your approach, whilst always basing your technical decisions on sound data analysis principles.
-        \item The use of AI tools is permitted as an aid; however, transparency is required. Should you use such tools, please include comprehensive details regarding where, when, and how they assisted in the project's development (similar to the example provided in \Cref{fig:collaboration}).
+        \item The use of AI tools is permitted as an aid; however, \textbf{transparency is required}. Should you use such tools (some groups already did it during the lab sessions), please include comprehensive details regarding where, when, and how they assisted in the project's development (similar to the example provided in \Cref{fig:collaboration}).
     \end{itemize}
 
     \newpage
