@@ -66,7 +66,7 @@
     \setcounter{page}{0}
     \newpage
 
-    % Reset link color for the main document content if desired, or keep as defined above
+    % Reset link color for the main document content
         \hypersetup{
         linkcolor={FireBrick},
         citecolor={FireBrick},
@@ -187,7 +187,7 @@
 
     \begin{figure}[htbp]
         \centering
-        \Acrobatmenu{GoBack}{\includegraphics[width=14cm]{./figures/ERDbeta_av_2022.eps}} % Ensure figure path is correct
+        \Acrobatmenu{GoBack}{\includegraphics[width=14cm]{./figures/ERDbeta_av_2022.eps}}
         \caption{Grand-average ERD/ERS potentials obtained in the \(\beta\) band for\\the movements in \href{https://doi.org/10.1371/journal.pone.0182578}{\myul{P. Ofner et al., 2017}}.Image by S. Romero.}
         \label{fig:ERD}
     \end{figure}
@@ -195,12 +195,12 @@
     \smallskip % Add some vertical space between figures
     \begin{figure}[htbp]
         \centering
-        \Acrobatmenu{GoBack}{\includegraphics[width=17.5cm]{./figures/ERDbeta_topography_2022.eps}} % Ensure figure path is correct
+        \Acrobatmenu{GoBack}{\includegraphics[width=17.5cm]{./figures/ERDbeta_topography_2022.eps}}
         \caption{Grand-average ERD potentials (in \si{\micro\volt}) obtained in the \(\beta\) band at the movement onset,\\for the movements in \href{https://doi.org/10.1371/journal.pone.0182578}{\myul{P. Ofner et al., 2017}}. Image by S. Romero.}
         \label{fig:ERDtopo}
     \end{figure}
 
-    \subsection{Phase 2: Feature Engineering and Selection/Extraction} % Changed & to and
+    \subsection{Phase 2: Feature Engineering and Selection/Extraction}
     \begin{itemize}
         \item \textbf{Objective:} Create meaningful features from the preprocessed EEG data that can aid discrimination between the different motor imagery states.
         \item \textbf{Tasks:}
@@ -219,7 +219,7 @@
                  \caption{Topographic representation of the difference\\in beta power between left and right response. Taken from \href{https://www.fieldtriptoolbox.org/workshop/oslo2019/timefrequency/}{\myul{a FieldTrip tutorial}}}.
             \end{figure}
 
-            \item \textbf{Feature Analysis and Selection/Extraction:} % Changed & to and
+            \item \textbf{Feature Analysis and Selection/Extraction:}
             \begin{itemize}
                 \item Analyse the discriminative power of individual features or feature sets.
                 \item Use techniques like training and validation curves to assess potential overfitting or underfitting with different feature sets.
@@ -244,7 +244,7 @@
 
     \begin{figure}[htbp]
         \centering
-        \Acrobatmenu{GoBack}{\includegraphics[width=17.5cm]{./figures/SCP_topography_2022.eps}} % Ensure figure path is correct
+        \Acrobatmenu{GoBack}{\includegraphics[width=17.5cm]{./figures/SCP_topography_2022.eps}}
         \caption{Slow cortical potential topographies for the movements in \href{https://doi.org/10.1371/journal.pone.0182578}{\myul{P. Ofner et al., 2017}}.\\ Maps show the grand-average amplitude in \si{\micro\volt} of a \SI{0.5}{\second} segment selected just before\\the movement onset. Image by S. Romero.}
         \label{fig:SCPtopo}
     \end{figure}
@@ -274,9 +274,9 @@
     xrightmargin=55mm,
     label={Exported 'features.csv' file},
     style=xcode]
-    {text}{./codes/features.csv} % Ensure code path is correct
+    {text}{./codes/features.csv}
 
-    \subsection{Phase 3: Model Training and Validation} % Changed & to and
+    \subsection{Phase 3: Model Training and Validation}
     \begin{itemize}
         \item \textbf{Objective:} Train and rigorously evaluate different machine learning models for the classification task.
         \item \textbf{Tasks:}
@@ -333,7 +333,7 @@
     \begin{itemize}
         \item Well-documented code implementing the full analysis pipeline. Predictably, MATLAB and Python code (either code files or Jupyter Notebooks).
         \item A final written report.
-        \item A group presentation summarising the project and findings. % British spelling summarising is correct
+        \item A group presentation summarising the project and findings.
     \end{itemize}
 
     These three items will be included in 2 deliverables, described in \Cref{subsec:report} and \Cref{subsec:presentation}.
@@ -363,7 +363,7 @@
         \begin{itemize}
             \item Describe the analytical techniques and models used (e.g., EDA, statistical tests, classification).
             \item Justify your choice of methods based on the project objectives and data characteristics.
-            \item Mention key software or libraries used. % British spelling libraries is correct
+            \item Mention key software or libraries used.
         \end{itemize}
 
         \item \textbf{Results:}
@@ -384,7 +384,7 @@
 
         \item \textbf{Conclusion:}
         \begin{itemize}
-            \item Summarise the primary conclusions drawn from your analysis. % Corrected Summarise
+            \item Summarise the primary conclusions drawn from your analysis.
             \item Directly answer the initial research question based on your findings.
             \item Optionally, suggest potential areas for future work.
         \end{itemize}
@@ -397,6 +397,14 @@
         \item \textbf{Annexes:} % Use Annexes plural here
         \begin{itemize}
             \item Include supplementary material (e.g., code snippets, extra plots) if it supports the main report but is too detailed for the body.
+            \item \textbf{Do not include code as screenshots or images, code must be text that can be copied and pasted}. The use of \LaTeX\ is highly recommended. You may use this document as a reference if you are unsure where to start; the \LaTeX~source is available \href{https://github.com/joanfrancesc/Data-Analysis-Project}{\myul{here}}.
+
+            \begin{figure}[htbp]
+              \centering
+              \Acrobatmenu{GoBack}{\includegraphics[width=8cm]{./figures/AnakinPadme.jpg}}
+              \caption{``To the Dark Side, a Jedi turns, hmmm, \\each time a code screenshot to a document you paste, yes.'' --- Master Yoda}
+              \label{fig:NoScreenshots}
+            \end{figure}
         \end{itemize}
     \end{itemize}
 
@@ -405,15 +413,7 @@
     \subsubsection{Delivery}
     \begin{itemize}
         \item The report is expected to be delivered \href{https://atenea.upc.edu/mod/assign/view.php?id=4865448}{\myul{via ATENEA}} \textbf{before the end of 11th June}.
-        \item The document should be \textbf{one PDF document}. Additional files or information that cannot be included as annexes (such as \texttt{.csv} files or \texttt{.ipynb} notebooks), will be added in an \textbf{additional \texttt{.zip} file}. The \textbf{maximum allowed size} for each file is $\SI{\mathbf{200}}{\mathbf{\mega\byte}}$. % British spelling allowed is correct
-        \item \textbf{Do not include code as screenshots or images, code must be text that can be copied and pasted}. The use of \LaTeX\ is highly recommended. You may use this document as a reference if you are unsure where to start; the \LaTeX~source is available \href{https://github.com/joanfrancesc/Data-Analysis-Project}{\myul{here}}.
-
-        \begin{figure}[htbp]
-            \centering
-            \Acrobatmenu{GoBack}{\includegraphics[width=8cm]{./figures/AnakinPadme.jpg}}
-            \caption{``To the Dark Side, a Jedi turns, hmmm, \\each time a code screenshot to a document you paste, yes.'' --- Master Yoda}
-            \label{fig:NoScreenshots}
-        \end{figure}
+        \item The document should be \textbf{one PDF document}. Additional files or information that cannot be included as annexes (such as \texttt{.csv} files or \texttt{.ipynb} notebooks), will be added in an \textbf{additional \texttt{.zip} file}. The \textbf{maximum allowed size} for each file is $\SI{\mathbf{200}}{\mathbf{\mega\byte}}$.
     \end{itemize}
 
     \subsection{Presentation}
@@ -426,7 +426,7 @@
         \item The presentation document is expected to be delivered \href{https://atenea.upc.edu/mod/assign/view.php?id=4973442}{\myul{via ATENEA}} \textbf{before the end of 11th June}.
         \item The document should be \textbf{one PDF document}. No additional files will be accepted. The \textbf{maximum allowed size} for the file is $\SI{\mathbf{200}}{\mathbf{\mega\byte}}$.
         \item Each group of students will have a slot of \SIrange{10}{15}{\min} to present their projects \textbf{on 12th June, just after the final exam}.
-        \item You may use a \textbf{PDF or Powerpoint} file and the computer in the room for presenting (recommended), or your own laptop if you need different software. % Corrected phrasing
+        \item You may use a \textbf{PDF or Powerpoint} file and the computer in the room for presenting (recommended), or your own laptop if you need different software.
     \end{itemize}
 
     \subsection{Grading}
@@ -511,7 +511,7 @@
 
         \begin{figure}[htbp]
             \centering
-            \Acrobatmenu{GoBack}{\includegraphics[trim=0cm 1cm 0cm 1cm, clip, width=9cm]{./figures/UCM4-003.png}}
+            \Acrobatmenu{GoBack}{\includegraphics[trim=0.1cm 1cm 0cm 1cm, clip, width=12cm]{./figures/UCM4-003.png}}
             \caption{Ultracortex EEG headset and Cyton/Daisy bioamplifier. Image from the \href{https://shop.openbci.com/products/the-complete-headset-eeg?variant=44401726193904}{\myul{OpenBCI Shop}}.}
             \label{fig:OpenBCI}
         \end{figure}
@@ -527,11 +527,11 @@
         \subsection{Trial Structure}
         \begin{figure}[htbp]
             \centering
-            \Acrobatmenu{GoBack}{\includegraphics[width=8cm]{./figures/paradigm.png}} % Ensure figure path is correct
+            \Acrobatmenu{GoBack}{\includegraphics[width=9cm]{./figures/paradigm.png}}
             \caption{Paradigm used in the motor imagery trials. Image by J. Pinyol.}
             \label{fig:paradigm}
         \end{figure}
-        The experiment was programmed using PsychoPy. Each trial had an approximate duration of \SI{5}{\second} and followed this structure (see \Cref{fig:paradigm}): % British spelling programmed is correct
+        The experiment was programmed using PsychoPy. Each trial had an approximate duration of \SI{5}{\second} and followed this structure (see \Cref{fig:paradigm}): programmed is correct
         \begin{itemize}
             \item \textbf{Fixation Cross:} \SI{5}{\second} + random duration in the range of $\pm\SI{0.2}{\second}$.
             \item \textbf{Task Period:} \SI{2}{\second}. Here the volunteer was shown either an arrow indicating right or left (for motor imagery), or the word \emph{Rest}.
